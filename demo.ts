@@ -31,5 +31,5 @@ class BulleSort {
 let list = new BulleSort([234, 43, 55, 63, 5, 6, 235, 547]);
 let originList=[...list.getList()];
 console.log(`Begin sort processing....`)
-console.log(`Origin list : ${originList}`)
-list.bulleSort()
+console.log(`Origin list : [${originList}]`)
+// list.bulleSort()

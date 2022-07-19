@@ -1,27 +1,35 @@
 class BulleSort {
-    private _list: number[];
+    private list: number[];
 
     constructor(list: number[]) {
-        this._list = list;
+        this.list = list;
+    }
+
+    getList(){
+        return this.list;
     }
 
     bulleSort(){
-        for(let i=0; i<this._list.length; i++){
-            for(let j=0; j<this._list.length-i-1; j++){
-                if(this._list[j]>this._list[j+1]){
+        for(let i=0; i<this.list.length; i++){
+            for(let j=0; j<this.list.length-i-1; j++){
+                console.log(`List after sort #${i}.${j} :`);
+                if(this.list[j]>this.list[j+1]){
                     this.sort(j);
                 }
+                console.log(this.list)
             }
         }
-        console.log(this._list)
     }
 
     private sort(j: number) {
-        let temp = this._list[j];
-        this._list[j] = this._list[j + 1];
-        this._list[j + 1] = temp;
+        let temp = this.list[j];
+        this.list[j] = this.list[j + 1];
+        this.list[j + 1] = temp;
     }
 }
 
 let list = new BulleSort([234, 43, 55, 63, 5, 6, 235, 547]);
+let originList=[...list.getList()];
+console.log(`Begin sort processing....`)
+console.log(`Origin list : ${originList}`)
 list.bulleSort()
